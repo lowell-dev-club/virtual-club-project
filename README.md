@@ -1,6 +1,6 @@
-# Project
+# Virtual club Flask project
 
-Project Description
+Club project during quarintine.
 
 #### Requirements
 
@@ -32,29 +32,11 @@ or with python manually
 python3 run.py
 ```
 
-## Running the tests
-
-```
-make test
-```
-
-or with ... manually
-
-```
-run test command
-```
-
-#### What are the tests checking
-
-test check for ...
-
-#### What happens when a test fails
-
-Report the failed test [here](issue link)!
-
 ## Authors
 
-* [**Author Name**](author link)## License
+* [**Rafael Cenzano**](https://github.com/RafaelCenzano)
+
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
