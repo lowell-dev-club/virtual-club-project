@@ -4,8 +4,5 @@ init:
 clean:
 	pystarter clean
 
-test:
-	pytest
-
 run: clean
 	python3 run.py
