@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Title -->
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Meta Data -->
+    <meta charset="utf-8">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Lowell Dev Club group project.">
+    <meta name="msapplication-TileColor" content="#da532c">
+
+    {% block meta %}
+    {% endblock %}
+    {% block head_css %}
+    {% endblock %}
+    {% block head_js %}
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+    {% block trailing_js %}
+    {% endblock %}
+</body>
+</html>
