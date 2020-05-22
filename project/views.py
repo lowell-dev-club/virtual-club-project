@@ -13,11 +13,22 @@ def home():
     return render_template('home.html')
 
 
-beginings = []
+beginings = ['There was a little boy.','This person had no father and was raised by their grandparents.']
 middles1 = []
 middles2 = []
 ends = []
 
 @app.route('/story/<int:part>')
 def story(part):
+    
+    if part == 0:
+    	story = choice(beginings)
+   	elif part == 1:
+   		story = choice(middles1)
+   	elif part == 2:
+   		story = choice(middles1)
+   	elif part == 3:
+   		story = choice(middles1)
+   	else:
+   		flash('Error no story part found', 'error')
     return render_template('home.html')
