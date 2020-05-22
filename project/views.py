@@ -14,7 +14,7 @@ def home():
 
 
 beginings = []
-middles1 = []
+middles1 = ["The boys went out for a cold beer.", "Then, the family went to disneyland", "Everyone got hungry and ate their favorite candy bars, which was M&Ms.", ""]
 middles2 = []
 ends = []
 
