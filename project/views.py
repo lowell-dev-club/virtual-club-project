@@ -2,7 +2,7 @@
 from project import app
 
 # Import functions from flask package
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, make_response
 
 # Randomize choices
 from random import choice
@@ -20,4 +20,17 @@ ends = []
 
 @app.route('/story/<int:part>')
 def story(part):
-    return render_template('home.html')
+
+    if part == 0:
+        story = choice(beginings)
+    elif part == 1:
+        story = choice(middles1)
+    elif part == 2:
+        story = choice(middles1)
+    elif part == 3:
+        story = choice(middles1)
+    else:
+        flash('Error no story part found', 'error')
+        return redirect(url_for('home'))
+    page = make_response(render_template('story.html', story=story))
+    page.set_cookie(f'part{part}', f'{story}', max_age=60 * 60 * 24 * 365)
