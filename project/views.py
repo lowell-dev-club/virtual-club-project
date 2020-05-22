@@ -12,10 +12,9 @@ from random import choice
 def home():
     return render_template('home.html')
 
-
 beginings = ['There was a little boy.','This person had no father and was raised by their grandparents.']
-middles1 = []
-middles2 = []
+middles1 = ["The boys went out for a cold beer.", "Then, the family went to disneyland", "Everyone got hungry and ate their favorite candy bars, which was M&Ms.", ""]
+
 ends = []
 
 @app.route('/story/<int:part>')
