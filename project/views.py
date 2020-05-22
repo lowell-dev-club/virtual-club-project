@@ -12,10 +12,8 @@ from random import choice
 def home():
     return render_template('home.html')
 
-
-beginings = []
+beginings = ['There was a little boy.','This person had no father and was raised by their grandparents.']
 middles1 = ["The boys went out for a cold beer.", "Then, the family went to disneyland", "Everyone got hungry and ate their favorite candy bars, which was M&Ms.", ""]
-middles2 = ["This was the biggest mistake the people in the previous setence ever made.", "The underaged children snuck into the club from the back.", "The dwares started to grow wings."]
 ends = []
 
 @app.route('/story/<int:part>')
@@ -26,9 +24,7 @@ def story(part):
     elif part == 1:
         story = choice(middles1)
     elif part == 2:
-        story = choice(middles1)
-    elif part == 3:
-        story = choice(middles1)
+        story = choice(ends)
     else:
         flash('Error no story part found', 'error')
         return redirect(url_for('home'))
