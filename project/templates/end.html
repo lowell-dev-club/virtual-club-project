@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Story{% endblock %}
+
+{% block content %}
+<h1>Story End!</h1>
+<p>{{ part0 }}</p>
+<p>{{ part1 }}</p>
+<p>{{ part2 }}</p>
+<a href="{{ url_for('story', part=0) }}">Start Again</a>
+{% endblock %}
