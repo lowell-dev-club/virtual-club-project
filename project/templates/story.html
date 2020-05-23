@@ -5,7 +5,7 @@
 {% block content %}
 <h1>Story Part {{ part }}</h1>
 <p>{{ story }}</p>
-{% if part < 2 %}
+{% if part < 3 %}
 <a href="{{ url_for('story', part=part) }}">Next</a>
 {% else %}
 <a href="{{ url_for('end') }}">Next</a>
