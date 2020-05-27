@@ -17,7 +17,7 @@ middles1 = ["The boys went out for a cold beer.", "Then, the family went to disn
 ends = ['He ate a poisoned apple and died', 'She discovered a pot of gold at the end of the rainbow', 'He fell off a cliff and died’,  ‘She became an all-powerful wizard and conquered the world’, ‘He graduated Hogwarts and defeated Lord Voldemort', 'They lived in a cave happily ever after']
 
 @app.route('/story/<int:part>')
-def story(part):
+def story(part=0):
 
     story = ''
 
