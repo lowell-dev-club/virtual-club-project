@@ -2,7 +2,7 @@
 from project import app
 
 # Import functions from flask package
-from flask import render_template, redirect, url_for, make_response, request
+from flask import render_template, redirect, url_for, make_response, request, abort
 
 # Randomize choices
 from random import choice
@@ -17,7 +17,7 @@ middles1 = ["The boys went out for a cold beer.", "Then, the family went to disn
 ends = ['He ate a poisoned apple and died', 'She discovered a pot of gold at the end of the rainbow', 'He fell off a cliff and died’,  ‘She became an all-powerful wizard and conquered the world’, ‘He graduated Hogwarts and defeated Lord Voldemort', 'They lived in a cave happily ever after']
 
 @app.route('/story/<int:part>')
-def story(part=0):
+def story(part):
 
     story = ''
 
@@ -28,7 +28,7 @@ def story(part=0):
     elif part == 2:
         story = choice(ends)
     else:
-        return redirect(url_for('home'))
+        abort(404)
 
     page = make_response(render_template('story.html', story=story, part=part+1))
     page.set_cookie(f'part{part}', f'{story}', max_age=60 * 60 * 24 * 365)
@@ -50,4 +50,8 @@ def end():
 
     else:
 
-        return redirect(url_for('home'))
+        abort(404)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
